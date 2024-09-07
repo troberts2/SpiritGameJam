@@ -25,4 +25,8 @@ public class LevelSelect : MonoBehaviour
     public void ReloadScene(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void LevelSelector()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
 }
