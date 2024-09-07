@@ -7,6 +7,9 @@ public class PlayerCollision : MonoBehaviour
     private Rigidbody2D rb;
     private CircleCollider2D circleCollider2D; 
     public SoulShards.SoulShardsType currentType;
+    private bool justPorted = false;
+    private float portCdTimer = 0;
+    [SerializeField] float portCd;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,11 @@ public class PlayerCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(portCdTimer > 0){
+            portCdTimer -= Time.deltaTime;
+        }else{
+            justPorted = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -28,6 +35,18 @@ public class PlayerCollision : MonoBehaviour
         if(other.tag == "colorGate"){
             currentType = other.GetComponent<ColorGate>().changeToType;
             StartCoroutine(ChangeColor());
+        }
+        if(other.tag == "portal"){
+            if(!justPorted){
+                justPorted = true;
+                portCdTimer = portCd;
+                transform.position = other.GetComponent<PortalSet>().otherPortal.transform.position;
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.tag == "portal" && portCdTimer <= 0){
+            justPorted = false;
         }
     }
 
