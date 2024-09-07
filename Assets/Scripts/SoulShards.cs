@@ -7,6 +7,9 @@ public class SoulShards : MonoBehaviour
     public float soulPercentage;
     [SerializeField] float timeTillSoulDepletes;
     public enum SoulShardsType{
+        Angry,
+        Sad,
+        Happy,
         none
     }
     public SoulShardsType type;

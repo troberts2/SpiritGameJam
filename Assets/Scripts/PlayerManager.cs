@@ -17,6 +17,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject star3;
     [SerializeField] TextMeshProUGUI topText;
     [SerializeField] GameObject nextLevelButton;
+    public bool playerConsumed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,28 +42,35 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("end called");
         yield return new WaitForSeconds(1f);
         winPanel.SetActive(true);
-        if(playerFullPercentage > .5f){
-            //3 star win
-            topText.text = "wow nice man!";
-            StartCoroutine(LerpStarAlpha(star1));
-            yield return new WaitForSeconds(.5f);
-            StartCoroutine(LerpStarAlpha(star2));
-            yield return new WaitForSeconds(.5f);
-            StartCoroutine(LerpStarAlpha(star3));
-        }else if(playerFullPercentage > .3f){
-            //2 star win
-            topText.text = "almost awesome";
-            StartCoroutine(LerpStarAlpha(star1));
-            yield return new WaitForSeconds(.5f);
-            StartCoroutine(LerpStarAlpha(star2));
-        }else if(playerFullPercentage > .1f){
-            //1 star win
-            topText.text = "one stars better than none";
-            StartCoroutine(LerpStarAlpha(star1));
-        }else if(playerFullPercentage > 0){
-            topText.text = "at least you collected a soul";
-            //0 star win
-        }else{
+        if(!playerConsumed){
+            if(playerFullPercentage > .5f){
+                //3 star win
+                topText.text = "wow nice man!";
+                StartCoroutine(LerpStarAlpha(star1));
+                yield return new WaitForSeconds(.5f);
+                StartCoroutine(LerpStarAlpha(star2));
+                yield return new WaitForSeconds(.5f);
+                StartCoroutine(LerpStarAlpha(star3));
+            }else if(playerFullPercentage > .3f){
+                //2 star win
+                topText.text = "almost awesome";
+                StartCoroutine(LerpStarAlpha(star1));
+                yield return new WaitForSeconds(.5f);
+                StartCoroutine(LerpStarAlpha(star2));
+            }else if(playerFullPercentage > .1f){
+                //1 star win
+                topText.text = "one stars better than none";
+                StartCoroutine(LerpStarAlpha(star1));
+            }else if(playerFullPercentage > 0){
+                topText.text = "at least you collected a soul";
+                //0 star win
+            }else{
+            topText.text = "Big L";
+            //loss
+            nextLevelButton.SetActive(false);
+            }
+        }
+        else{
             topText.text = "Big L";
             //loss
             nextLevelButton.SetActive(false);

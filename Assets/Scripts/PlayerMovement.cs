@@ -72,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
         //launch tiny delay for added effect
         yield return new WaitForSeconds(.15f);
         Vector2 shootDir = (shootLineUI.GetPosition(1) - transform.position).normalized;
-        Debug.Log(clampedDistanceFromPlayer/maxLineLength);
         rb.AddForce(shootDir * (maxBallLaunchForce *(clampedDistanceFromPlayer/maxLineLength)), ForceMode2D.Impulse);
         yield return null;
     }
