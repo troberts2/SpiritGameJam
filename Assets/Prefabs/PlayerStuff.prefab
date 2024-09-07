@@ -1177,8 +1177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ae0af4718b16d459e5a72f9ab98bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shardList:
-  - {fileID: 0}
+  shardList: []
 --- !u!1 &6934257893978751119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,6 +1560,10 @@ PrefabInstance:
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1714221539828824076, guid: 49aaf4f785d93974cbe39d00758b13ff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714221539828824076, guid: 49aaf4f785d93974cbe39d00758b13ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -662.0857
       objectReference: {fileID: 0}
@@ -1644,6 +1647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2353d6719d8c4c4e93fd6579acfa850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentType: 0
   playerGrowthMultiplier: 1.5
   shardGrowthMultiplier: 1.5
 --- !u!114 &2932327579486618884
@@ -1666,6 +1670,7 @@ MonoBehaviour:
   star3: {fileID: 6934257893978751119}
   topText: {fileID: 6955355555862213660}
   nextLevelButton: {fileID: 6321018488347146469}
+  playerConsumed: 0
 --- !u!114 &2071722347638412102
 MonoBehaviour:
   m_ObjectHideFlags: 0
