@@ -24,7 +24,7 @@ public class SoulShards : MonoBehaviour
             yield return null;
         }
         yield return null;
-        GameManager.Instance.shardList.Remove(this);
+        GameManager.Instance.shardList.Remove(gameObject);
         if(GameManager.Instance.shardList.Count < 1) {
             PlayerManager.Instance.EndGameForLoss();
         }

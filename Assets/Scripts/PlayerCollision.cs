@@ -40,7 +40,7 @@ public class PlayerCollision : MonoBehaviour
     Coroutine growPlayer;
     [SerializeField] private float playerGrowthMultiplier;
     IEnumerator GrowPlayerSizeLight(Collider2D other){
-        GameManager.Instance.shardList.Remove(other.GetComponent<SoulShards>());
+        GameManager.Instance.shardList.Remove(other.gameObject);
         //set start values
         float elapsedTime = 0f;
         float playerLightStartIntesity = PlayerManager.Instance.playerLight.intensity;
