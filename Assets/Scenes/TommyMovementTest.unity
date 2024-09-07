@@ -675,11 +675,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1213392939 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3236204813255356681, guid: 3f9e8155b36861640b4c9eacad22dd23, type: 3}
-  m_PrefabInstance: {fileID: 4548261462759930810}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1227367561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,9 +1012,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 485634854705983232, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+      propertyPath: shardList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485634854705983232, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
       propertyPath: shardList.Array.data[0]
       value: 
-      objectReference: {fileID: 1213392939}
+      objectReference: {fileID: 0}
     - target: {fileID: 2206610408219223907, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
       propertyPath: m_Name
       value: PlayerStuff
