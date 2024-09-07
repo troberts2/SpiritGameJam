@@ -6,6 +6,7 @@ TagManager:
   tags:
   - shard
   - colorGate
+  - portal
   layers:
   - Default
   - TransparentFX
