@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+
     private Vector3 startPosition;
     [SerializeField] private float maxLineLength;
     [SerializeField] private float lineLengthMultiplier;
