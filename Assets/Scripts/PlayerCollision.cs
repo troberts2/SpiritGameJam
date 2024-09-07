@@ -47,10 +47,11 @@ public class PlayerCollision : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        GetComponent<SpriteRenderer>().color = endColor;
     }
 
     private void CollectShard(Collider2D other){
-        if(other.transform.localScale.magnitude <= transform.localScale.magnitude){
+        if(other.transform.localScale.magnitude <= transform.localScale.magnitude && other.GetComponent<SoulShards>().type == currentType){
             if(growPlayer != null) StopCoroutine(growPlayer);
             growPlayer = StartCoroutine(GrowPlayerSizeLight(other));
         }else{
