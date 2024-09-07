@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public List<SoulShards> shardList = new List<SoulShards>();
+    public List<GameObject> shardList = new List<GameObject>();
     public static GameManager Instance;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode){
-        shardList = FindObjectsOfType<SoulShards>().ToList();
+    void OnSceneLoaded(Scene sceneManager, LoadSceneMode loadSceneMode){
+        List <SoulShards> shards = FindObjectsOfType<SoulShards>().ToList();
+        foreach(SoulShards shard in shards){
+            shardList.Add(shard.gameObject);
+        }
+        
     }
 }
