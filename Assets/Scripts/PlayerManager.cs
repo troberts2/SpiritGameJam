@@ -41,6 +41,8 @@ public class PlayerManager : MonoBehaviour
         //lil delay
         Debug.Log("end called");
         yield return new WaitForSeconds(1f);
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<PlayerMovement>().enabled = false;
         winPanel.SetActive(true);
         if(!playerConsumed){
             if(playerFullPercentage > .5f){

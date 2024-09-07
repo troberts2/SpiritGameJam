@@ -15,6 +15,7 @@ public class PlayerCollision : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         circleCollider2D = GetComponent<CircleCollider2D>();
+        endScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class PlayerCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "shard"){
             other.GetComponent<Collider2D>().enabled = false;
+            lastCollidedSoulShard = other.GetComponent<SoulShards>();
             CollectShard(other);
         }
         if(other.tag == "colorGate"){
@@ -81,6 +83,9 @@ public class PlayerCollision : MonoBehaviour
 
     Coroutine growPlayer;
     [SerializeField] private float playerGrowthMultiplier;
+    private SoulShards lastCollidedSoulShard;
+    Vector3 endScale;
+    float endLightIntesity;
     IEnumerator GrowPlayerSizeLight(Collider2D other){
         GameManager.Instance.shardList.Remove(other.gameObject);
         //set start values
@@ -93,21 +98,27 @@ public class PlayerCollision : MonoBehaviour
         PlayerManager.Instance.playerFullPercentage += other.GetComponent<SoulShards>().soulPercentage;
 
         //set end values
-        float endLightIntesity = PlayerManager.Instance.playerFullPercentage;
-        Vector3 endScale = transform.localScale * playerGrowthMultiplier;
+        endLightIntesity = PlayerManager.Instance.playerFullPercentage;
+        endScale *= playerGrowthMultiplier;
         Vector3 shardEndScale = Vector2.zero;
         //little delay
         yield return new WaitForSeconds(.15f);
         while(elapsedTime < .5f){
-            PlayerManager.Instance.playerLight.intensity = Mathf.Lerp(playerLightStartIntesity, endLightIntesity, elapsedTime / .5f);
-            transform.localScale = Vector3.Lerp(playerStartScale, endScale, elapsedTime/.5f);
+            if(lastCollidedSoulShard == other.GetComponent<SoulShards>()){
+                PlayerManager.Instance.playerLight.intensity = Mathf.Lerp(playerLightStartIntesity, endLightIntesity, elapsedTime / .5f);
+                transform.localScale = Vector3.Lerp(playerStartScale, endScale, elapsedTime/.5f); 
+            }
+            
             other.transform.localScale = Vector3.Lerp(shardStartScale, shardEndScale, elapsedTime/.5f);
             other.transform.position = Vector2.Lerp(shardStartPos, transform.position, elapsedTime/.5f);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        PlayerManager.Instance.playerLight.intensity = endLightIntesity;
-        transform.localScale = endScale;
+        if(lastCollidedSoulShard == other.GetComponent<SoulShards>()){
+            PlayerManager.Instance.playerLight.intensity = endLightIntesity;
+            transform.localScale = endScale;
+        }
+        
         Destroy(other.gameObject);
         if(GameManager.Instance.shardList.Count < 1){
             StartCoroutine(PlayerManager.Instance.EndGame());
@@ -144,8 +155,6 @@ public class PlayerCollision : MonoBehaviour
         other.transform.localScale = shardEndScale;
         transform.localScale = playerEndScale;
         //Destroy player after fading light
-        GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<PlayerMovement>().enabled = false;
         PlayerManager.Instance.EndGameForLoss();
     }
 }
