@@ -129,4 +129,12 @@ public class PlayerCollision : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         PlayerManager.Instance.EndGameForLoss();
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Hazard")
+        {
+            gameObject.SetActive(false);
+            PlayerManager.Instance.EndGameForLoss();
+        }
+    }
 }
