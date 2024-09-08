@@ -35,12 +35,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject optionsUI;
     private void PauseGame(){
+        PlayerManager.Instance.gameObject.GetComponent<PlayerMovement>().enabled = false;
         Time.timeScale = 0;
         pauseUI.SetActive(true);
     }
     public void ResumeGame(){
         Time.timeScale = 1f;
         pauseUI.SetActive(false);
+        Invoke(nameof(EnablePlayerMovement), .1f);
+    }
+    private void EnablePlayerMovement(){
+        PlayerManager.Instance.gameObject.GetComponent<PlayerMovement>().enabled = true;
     }
     public void Options(){
         pauseUI.SetActive(false);

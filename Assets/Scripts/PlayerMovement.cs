@@ -7,12 +7,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private CircleCollider2D circleCollider2D;
     [SerializeField]private LineRenderer shootLineUI;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip launchSound;
     private Camera mainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         circleCollider2D = GetComponent<CircleCollider2D>();
         mainCamera = Camera.main;
     }
@@ -71,8 +74,13 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator LaunchBall(){
         //launch tiny delay for added effect
         yield return new WaitForSeconds(.15f);
-        Vector2 shootDir = (shootLineUI.GetPosition(1) - transform.position).normalized;
-        rb.AddForce(shootDir * (maxBallLaunchForce *(clampedDistanceFromPlayer/maxLineLength)), ForceMode2D.Impulse);
+        audioSource.clip = launchSound;
+        if(clampedDistanceFromPlayer/maxLineLength > .1f){
+            Vector2 shootDir = (shootLineUI.GetPosition(1) - transform.position).normalized;
+            rb.AddForce(shootDir * (maxBallLaunchForce *(clampedDistanceFromPlayer/maxLineLength)), ForceMode2D.Impulse);
+            audioSource.Play();
+        }
+        
         yield return null;
     }
 }
