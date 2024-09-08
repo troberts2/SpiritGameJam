@@ -8,7 +8,30 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 0c966bc863e80c44f85886b3a8f0fe15
+    path: Assets/Scenes/NatesScenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Prefabs/Scenes/LevelSelect.unity
+    path: Assets/Scenes/NatesScenes/TommyMovementTest.unity
+    guid: 32c7cf978f472944abb43bd298ca408a
+  - enabled: 1
+    path: Assets/Scenes/NatesScenes/LevelSelect.unity
     guid: 0bd1d1e44c4407d448d53d650eacecb3
+  - enabled: 1
+    path: Assets/Scenes/NatesScenes/LevelS/Level1.unity
+    guid: 46a2a0b7ca9d0174a922f703f0722853
+  - enabled: 1
+    path: Assets/Scenes/NatesScenes/LevelS/Level2.unity
+    guid: 63b9ecfb0f8745a4299b3d83fe1ca383
+  - enabled: 1
+    path: Assets/Scenes/NatesScenes/LevelS/Level3.unity
+    guid: 4924000f74283fe4a9c44626c0cf571b
+  - enabled: 1
+    path: Assets/Scenes/NatesScenes/LevelS/Level4.unity
+    guid: 09b7c56f543f783468c3e93b2c857b60
+  - enabled: 1
+    path: Assets/Scenes/NatesScenes/LevelS/Level5.unity
+    guid: 6538c412ce88679458527de9b8f8d748
+  - enabled: 1
+    path: Assets/Scenes/NatesScenes/LevelS/Level6.unity
+    guid: 07bacc1b3e05e2e4787e17189e8034cb
   m_configObjects: {}
