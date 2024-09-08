@@ -61,6 +61,13 @@ public class GameManager : MonoBehaviour
     public void QuitGame(){
         Application.Quit();
     }
+    [SerializeField] private GameObject creditUI;
+    public void Credits(){
+        creditUI.SetActive(true);
+    }
+    public void BackCredits(){
+        creditUI.SetActive(false);
+    }
 
     void OnSceneLoaded(Scene sceneManager, LoadSceneMode loadSceneMode){
         List <SoulShards> shards = FindObjectsOfType<SoulShards>().ToList();
