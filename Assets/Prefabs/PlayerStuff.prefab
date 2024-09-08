@@ -1608,6 +1608,18 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8576096497774868716, guid: 49aaf4f785d93974cbe39d00758b13ff, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576096497774868716, guid: 49aaf4f785d93974cbe39d00758b13ff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576096497774868716, guid: 49aaf4f785d93974cbe39d00758b13ff, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576096497774868716, guid: 49aaf4f785d93974cbe39d00758b13ff, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
@@ -1648,6 +1660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentType: 0
+  portCd: 0
   playerGrowthMultiplier: 1.5
   shardGrowthMultiplier: 1.5
 --- !u!114 &2932327579486618884
