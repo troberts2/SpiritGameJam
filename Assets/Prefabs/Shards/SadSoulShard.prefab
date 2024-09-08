@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulPercentage: 1
   timeTillSoulDepletes: 20
-  type: 3
+  type: 1
 --- !u!58 &1517366094919727789
 CircleCollider2D:
   m_ObjectHideFlags: 0

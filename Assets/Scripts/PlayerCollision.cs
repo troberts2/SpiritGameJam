@@ -158,4 +158,15 @@ public class PlayerCollision : MonoBehaviour
         //Destroy player after fading light
         PlayerManager.Instance.EndGameForLoss();
     }
+
+    //Hazard Collision
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Hazard")
+        {
+            PlayerManager.Instance.playerConsumed = true;
+            PlayerManager.Instance.EndGameForLoss();
+        }
+    }
+
 }

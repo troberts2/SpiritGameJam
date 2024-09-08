@@ -40,7 +40,7 @@ public class PlayerManager : MonoBehaviour
     public IEnumerator EndGame(){
         //lil delay
         Debug.Log("end called");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<PlayerMovement>().enabled = false;
         winPanel.SetActive(true);
