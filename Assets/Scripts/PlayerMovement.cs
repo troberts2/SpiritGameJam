@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator LaunchBall(){
         //launch tiny delay for added effect
         yield return new WaitForSeconds(.15f);
+        PlayerManager.Instance.currentStrokes++;
         audioSource.clip = launchSound;
         if(clampedDistanceFromPlayer/maxLineLength > .1f){
             Vector2 shootDir = (shootLineUI.GetPosition(1) - transform.position).normalized;
