@@ -122,8 +122,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.01184988, y: -0.005049944, z: 0}
-    m_Extent: {x: 4.23215, y: 4.72445, z: 0}
+    m_Center: {x: -0.012249947, y: -0.005350113, z: 0}
+    m_Extent: {x: 4.23205, y: 4.72475, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -183,8 +183,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.015183687, y: -0.020197034}
+  m_Size: {x: 0.66596174, y: 1.0382786}
   m_Direction: 0
 --- !u!95 &1620804704221970567
 Animator:
@@ -329,8 +329,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.012200117, y: -0.005350113, z: 0}
-    m_Extent: {x: 4.2319, y: 4.72515, z: 0}
+    m_Center: {x: -0.011899948, y: -0.0050001144, z: 0}
+    m_Extent: {x: 4.2315, y: 4.7255, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -390,8 +390,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.022619486, y: -0.005654931}
+  m_Size: {x: 0.6267772, y: 1.0273573}
   m_Direction: 0
 --- !u!95 &7362285281174984822
 Animator:

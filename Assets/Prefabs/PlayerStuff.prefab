@@ -3160,7 +3160,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -9996,6 +9996,8 @@ MonoBehaviour:
   star3: {fileID: 6934257893978751119}
   topText: {fileID: 6955355555862213660}
   nextLevelButton: {fileID: 6321018488347146469}
+  levelParAmount: 0
+  currentStrokes: 0
   playerConsumed: 0
 --- !u!114 &2071722347638412102
 MonoBehaviour:
