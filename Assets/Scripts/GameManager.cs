@@ -53,7 +53,13 @@ public class GameManager : MonoBehaviour
     }
     public void BackOptions(){
         optionsUI.SetActive(false);
-        pauseUI.SetActive(true);
+        if(SceneManager.GetActiveScene().name != "MainMenu"){
+            pauseUI.SetActive(true);
+        }
+        
+    }
+    public void QuitGame(){
+        Application.Quit();
     }
 
     void OnSceneLoaded(Scene sceneManager, LoadSceneMode loadSceneMode){
