@@ -373,6 +373,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -356.68
       objectReference: {fileID: 0}
+    - target: {fileID: 4746006697854889877, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880800317341472215, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+      propertyPath: Portal
+      value: 
+      objectReference: {fileID: 8300000, guid: b1a7388e6d442dd4ab2b75c143eaf57a, type: 3}
+    - target: {fileID: 5880800317341472215, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+      propertyPath: HitWall
+      value: 
+      objectReference: {fileID: 8300000, guid: a1621c7fdc1bc79419a7ccf05df30443, type: 3}
+    - target: {fileID: 5880800317341472215, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+      propertyPath: playSFX
+      value: 
+      objectReference: {fileID: 1568119528}
+    - target: {fileID: 5880800317341472215, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+      propertyPath: PassGate
+      value: 
+      objectReference: {fileID: 8300000, guid: 4cd7236aa69d3f6469cedd4551b852cf, type: 3}
+    - target: {fileID: 5880800317341472215, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+      propertyPath: HitHazard
+      value: 
+      objectReference: {fileID: 8300000, guid: 20520217b73064a4ca59857a91e37fda, type: 3}
     - target: {fileID: 6204237966040410803, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -385,7 +409,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8668066467160781889, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+    - {fileID: 5582711917416136996, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+    - {fileID: 5212219923944826443, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3493,6 +3520,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[144].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 3117273536535715465, guid: 540bc218547034f4e820fad7d786225f, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 4101297942940356172, guid: 540bc218547034f4e820fad7d786225f, type: 3}
       propertyPath: m_Tiles.Array.size
       value: 214
@@ -5198,6 +5229,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1568119528 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4746006697854889877, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+  m_PrefabInstance: {fileID: 248031942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6626298464595907154
 PrefabInstance:
   m_ObjectHideFlags: 0
