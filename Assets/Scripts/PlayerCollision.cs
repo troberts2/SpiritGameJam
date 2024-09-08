@@ -73,7 +73,7 @@ public class PlayerCollision : MonoBehaviour
     }
 
     private void CollectShard(Collider2D other){
-        if(other.transform.localScale.magnitude <= transform.localScale.magnitude && other.GetComponent<SoulShards>().type == currentType){
+        if(other.transform.localScale.magnitude <= transform.localScale.magnitude && (other.GetComponent<SoulShards>().type == currentType || other.GetComponent<SoulShards>().type == SoulShards.SoulShardsType.none)){
             growPlayer = StartCoroutine(GrowPlayerSizeLight(other));
         }else{
             if(growPlayer !=null ) StopCoroutine(growPlayer);
