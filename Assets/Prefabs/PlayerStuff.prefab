@@ -8298,7 +8298,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1048788418877168004}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4348347931268409036}
+        m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
+        m_MethodName: LoadSceneByName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level3
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6453152519190310589
 GameObject:
   m_ObjectHideFlags: 0
@@ -10496,7 +10508,7 @@ MonoBehaviour:
   star3: {fileID: 6934257893978751119}
   topText: {fileID: 6955355555862213660}
   nextLevelButton: {fileID: 6321018488347146469}
-  levelParAmount: 0
+  levelParAmount: 5
   currentStrokes: 0
   playerConsumed: 0
 --- !u!114 &2071722347638412102
@@ -10760,7 +10772,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9528302, g: 0.5528213, b: 0.5528213, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
