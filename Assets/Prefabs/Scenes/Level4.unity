@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerStuff
       objectReference: {fileID: 0}
+    - target: {fileID: 2932327579486618884, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
+      propertyPath: levelParAmount
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3502333561396250854, guid: 3437006d6ad2a1245ad125e154d80e63, type: 3}
       propertyPath: m_LocalPosition.x
       value: 660.30566
