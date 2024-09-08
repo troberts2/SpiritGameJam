@@ -28,6 +28,27 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)){
+            PauseGame();
+        }
+    }
+    [SerializeField] private GameObject pauseUI;
+    [SerializeField] private GameObject optionsUI;
+    private void PauseGame(){
+        Time.timeScale = 0;
+        pauseUI.SetActive(true);
+    }
+    public void ResumeGame(){
+        Time.timeScale = 1f;
+        pauseUI.SetActive(false);
+    }
+    public void Options(){
+        pauseUI.SetActive(false);
+        optionsUI.SetActive(true);
+    }
+    public void BackOptions(){
+        optionsUI.SetActive(false);
+        pauseUI.SetActive(true);
     }
 
     void OnSceneLoaded(Scene sceneManager, LoadSceneMode loadSceneMode){
