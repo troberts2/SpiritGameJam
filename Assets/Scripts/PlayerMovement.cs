@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 startPosition;
     [SerializeField] private float maxLineLength;
     [SerializeField] private float lineLengthMultiplier;
+    [SerializeField] private TextMeshProUGUI shotCounter;
     private float clampedDistanceFromPlayer;
 
     IEnumerator PullBackShooter(){
@@ -75,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         //launch tiny delay for added effect
         yield return new WaitForSeconds(.15f);
         PlayerManager.Instance.currentStrokes++;
+        shotCounter.text = "Current Shots: " +PlayerManager.Instance.currentStrokes;
         audioSource.clip = launchSound;
         if(clampedDistanceFromPlayer/maxLineLength > .1f){
             Vector2 shootDir = (shootLineUI.GetPosition(1) - transform.position).normalized;
