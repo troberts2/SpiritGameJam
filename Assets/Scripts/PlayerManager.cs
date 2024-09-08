@@ -48,7 +48,7 @@ public class PlayerManager : MonoBehaviour
         if(!playerConsumed){
             if(currentStrokes <= levelParAmount - 1){
                 //3 star win
-                topText.text = "wow nice man!";
+                topText.text = "Wow, above par!?";
                 StartCoroutine(LerpStarAlpha(star1));
                 yield return new WaitForSeconds(.5f);
                 StartCoroutine(LerpStarAlpha(star2));
@@ -56,16 +56,16 @@ public class PlayerManager : MonoBehaviour
                 StartCoroutine(LerpStarAlpha(star3));
             }else if(currentStrokes == levelParAmount){
                 //2 star win
-                topText.text = "almost awesome";
+                topText.text = "Just made par!";
                 StartCoroutine(LerpStarAlpha(star1));
                 yield return new WaitForSeconds(.5f);
                 StartCoroutine(LerpStarAlpha(star2));
             }else if(currentStrokes == levelParAmount + 1){
                 //1 star win
-                topText.text = "one stars better than none";
+                topText.text = "Didn't make par!";
                 StartCoroutine(LerpStarAlpha(star1));
             }else if(currentStrokes >= levelParAmount + 2){
-                topText.text = "at least you collected a soul";
+                topText.text = "Not even close to par!";
                 //0 star win
             }else{
             topText.text = "Big L";
