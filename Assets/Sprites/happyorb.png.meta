@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 148b401cb8e618744a9c93427efaa4f3
+guid: d2e1b8cce76facf4e9a1dbbc9bb0737e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sadOrb_0
+      name: happyorb_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 414ece8c80d0aaa439215baca7895bd8
-      internalID: 688791865
+      spriteID: af4d3de93471bee4c87af28fc0b4b617
+      internalID: 1359892209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sadOrb_1
+      name: happyorb_1
       rect:
         serializedVersion: 2
         x: 128
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ed22cd011d6ea2429f510bb9c86b6c7
-      internalID: 944925753
+      spriteID: 6f5466855ed88b144a82b5bc681c78fb
+      internalID: 993782201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sadOrb_2
+      name: happyorb_2
       rect:
         serializedVersion: 2
         x: 256
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28acee31c9d09714b979b7e4d9eb0299
-      internalID: 1080865996
+      spriteID: cc80719400033324892675ac17ed909c
+      internalID: 1549917909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sadOrb_3
+      name: happyorb_3
       rect:
         serializedVersion: 2
         x: 384
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c394eeafbd7249245982033b0f31b692
-      internalID: -133794794
+      spriteID: c26644807c0468e4ebe5bd868ba808b6
+      internalID: -1704529995
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sadOrb_0: 688791865
-      sadOrb_1: 944925753
-      sadOrb_2: 1080865996
-      sadOrb_3: -133794794
+      happyorb_0: 1359892209
+      happyorb_1: 993782201
+      happyorb_2: 1549917909
+      happyorb_3: -1704529995
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
