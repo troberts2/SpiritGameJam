@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject star3;
     [SerializeField] TextMeshProUGUI topText;
     [SerializeField] GameObject nextLevelButton;
+    public int levelParAmount;
+    public int currentStrokes = 0;
     public bool playerConsumed = false;
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,7 @@ public class PlayerManager : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         winPanel.SetActive(true);
         if(!playerConsumed){
-            if(playerFullPercentage > .5f){
+            if(currentStrokes <= levelParAmount - 1){
                 //3 star win
                 topText.text = "wow nice man!";
                 StartCoroutine(LerpStarAlpha(star1));
@@ -53,17 +55,17 @@ public class PlayerManager : MonoBehaviour
                 StartCoroutine(LerpStarAlpha(star2));
                 yield return new WaitForSeconds(.5f);
                 StartCoroutine(LerpStarAlpha(star3));
-            }else if(playerFullPercentage > .3f){
+            }else if(currentStrokes == levelParAmount){
                 //2 star win
                 topText.text = "almost awesome";
                 StartCoroutine(LerpStarAlpha(star1));
                 yield return new WaitForSeconds(.5f);
                 StartCoroutine(LerpStarAlpha(star2));
-            }else if(playerFullPercentage > .1f){
+            }else if(currentStrokes == levelParAmount + 1){
                 //1 star win
                 topText.text = "one stars better than none";
                 StartCoroutine(LerpStarAlpha(star1));
-            }else if(playerFullPercentage > 0){
+            }else if(currentStrokes >= levelParAmount + 2){
                 topText.text = "at least you collected a soul";
                 //0 star win
             }else{

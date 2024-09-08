@@ -15,7 +15,7 @@ public class SoulShards : MonoBehaviour
     public SoulShardsType type;
 
     private void Start() {
-        StartCoroutine(DepleteShard(timeTillSoulDepletes));
+        //StartCoroutine(DepleteShard(timeTillSoulDepletes));
     }
 
     IEnumerator DepleteShard(float time){
