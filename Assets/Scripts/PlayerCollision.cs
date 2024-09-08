@@ -17,6 +17,7 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField] private AudioClip HitHazard;
     [SerializeField] private AudioClip PassGate;
     [SerializeField] private AudioClip Portal;
+    [SerializeField] private AudioClip EatSpirit;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,7 @@ public class PlayerCollision : MonoBehaviour
             other.GetComponent<Collider2D>().enabled = false;
             lastCollidedSoulShard = other.GetComponent<SoulShards>();
             CollectShard(other);
+            playSFX.PlayOneShot(EatSpirit);
         }
         if(other.tag == "colorGate"){
             currentType = other.GetComponent<ColorGate>().changeToType;

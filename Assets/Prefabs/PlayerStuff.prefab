@@ -10473,6 +10473,7 @@ MonoBehaviour:
   HitHazard: {fileID: 8300000, guid: 20520217b73064a4ca59857a91e37fda, type: 3}
   PassGate: {fileID: 8300000, guid: 4cd7236aa69d3f6469cedd4551b852cf, type: 3}
   Portal: {fileID: 8300000, guid: b1a7388e6d442dd4ab2b75c143eaf57a, type: 3}
+  EatSpirit: {fileID: 8300000, guid: 4bbe50cf34437dc408f6374d5e868f51, type: 3}
   playerGrowthMultiplier: 1.5
   shardGrowthMultiplier: 1.5
 --- !u!114 &2932327579486618884
