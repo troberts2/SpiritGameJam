@@ -11,10 +11,12 @@ public class PlayerCollision : MonoBehaviour
     private bool justPorted = false;
     private float portCdTimer = 0;
     [SerializeField] float portCd;
+    private new ParticleSystem.MainModule particleSystem;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        particleSystem = GetComponent<ParticleSystem>().main;
         circleCollider2D = GetComponent<CircleCollider2D>();
         endScale = transform.localScale;
     }
@@ -66,6 +68,7 @@ public class PlayerCollision : MonoBehaviour
         }
         while(elapsedTime < .2f){
             GetComponent<SpriteRenderer>().color = Color.Lerp(startColor, endColor, elapsedTime/.2f);
+            particleSystem.startColor = Color.Lerp(startColor, endColor, elapsedTime/.2f);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
