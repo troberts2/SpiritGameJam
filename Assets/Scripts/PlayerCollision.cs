@@ -11,6 +11,11 @@ public class PlayerCollision : MonoBehaviour
     private bool justPorted = false;
     private float portCdTimer = 0;
     [SerializeField] float portCd;
+    public AudioSource playSFX;
+    [SerializeField] private AudioClip HitWall;
+    [SerializeField] private AudioClip HitHazard;
+    [SerializeField] private AudioClip PassGate;
+    [SerializeField] private AudioClip Portal;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +32,7 @@ public class PlayerCollision : MonoBehaviour
         }else{
             justPorted = false;
         }
-    }
+    }                                                                                                   
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "shard"){
@@ -38,12 +43,14 @@ public class PlayerCollision : MonoBehaviour
         if(other.tag == "colorGate"){
             currentType = other.GetComponent<ColorGate>().changeToType;
             StartCoroutine(ChangeColor());
+            playSFX.PlayOneShot(PassGate);
         }
         if(other.tag == "portal"){
             if(!justPorted){
                 justPorted = true;
                 portCdTimer = portCd;
                 transform.position = other.GetComponent<PortalSet>().otherPortal.transform.position;
+                playSFX.PlayOneShot(Portal);
             }
         }
     }
@@ -166,7 +173,15 @@ public class PlayerCollision : MonoBehaviour
         {
             PlayerManager.Instance.playerConsumed = true;
             PlayerManager.Instance.EndGameForLoss();
+            playSFX.PlayOneShot(HitHazard);
+        }
+        if (collision.gameObject.tag == "Wall") ;
+        {
+
+            playSFX.PlayOneShot(HitWall);
+            Debug.Log("Hit Wall");
         }
     }
+    
 
 }

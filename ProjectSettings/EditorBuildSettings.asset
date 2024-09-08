@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Prefabs/Scenes/SampleScene.unity
+    path: Assets/Scenes/NatesScenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Prefabs/Scenes/TommyMovementTest.unity
+    path: Assets/Scenes/NatesScenes/TommyMovementTest.unity
     guid: 32c7cf978f472944abb43bd298ca408a
   - enabled: 1
-    path: Assets/Prefabs/Scenes/LevelSelect.unity
+    path: Assets/Scenes/NatesScenes/LevelSelect.unity
     guid: 0bd1d1e44c4407d448d53d650eacecb3
   m_configObjects: {}
