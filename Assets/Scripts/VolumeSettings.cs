@@ -57,6 +57,6 @@ public class VolumeSettings : MonoBehaviour
     private void LoadMasterVolume(){
         masterSlider.value = PlayerPrefs.GetFloat("masterVolume");
 
-        SetSoundFXVolume();
+        SetMasterVolume();
     }
 }
