@@ -41,10 +41,9 @@ public class PlayerManager : MonoBehaviour
 
     public IEnumerator EndGame(){
         //lil delay
-        Debug.Log("end called");
-        yield return new WaitForSeconds(0.5f);
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<PlayerMovement>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
         winPanel.SetActive(true);
         if(!playerConsumed){
             if(currentStrokes <= levelParAmount - 1){
